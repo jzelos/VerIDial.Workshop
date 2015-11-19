@@ -1,0 +1,46 @@
+﻿@model VerIDial.Workshop.Models.DemoModel
+@{
+    ViewBag.Title = "VerIDial Demo - Online Authentication Solution";
+    ViewBag.Description = "Try the VerIDial Two Factor Authentication service for free. Use voice or your mobile phone and a one time pin.";
+}
+<section>
+    <div class="container-fluid">
+        <header>
+            <h1>This is my demonstration form</h1>
+        </header>
+        <div class="demo">
+            @using (Html.BeginForm())
+            {
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p class="error">@Html.DisplayFor(m => m.ErrorMessage)</p>
+                        <p class="form-group">
+                            @Html.LabelFor(m => m.PhoneNumber, new { @class = "hidden" })
+                            @Html.TextBoxFor(m => m.PhoneNumber, new { @placeholder = "Enter your number..." })
+                        </p>
+                        <p>Choose how you want to be verified...</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4">
+                        <span>
+                            <input name="submit" type="submit" value="SMS" />
+                        </span>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <span>
+                            <input name="submit" type="submit" value="CALL" />
+                        </span>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <span>
+                            <input name="submit" type="submit" value="APP" />
+                        </span>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</section>
+
